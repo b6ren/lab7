@@ -12,7 +12,7 @@
 
   gtag('config', 'UA-114588990-1');
 </script>
-	
+
 	<!-- Google Analytics Content Experiment code -->
 <script>function utmx_section(){}function utmx(){}(function(){var
 k='170276334-0',d=document,l=d.location,c=d.cookie;
@@ -47,7 +47,18 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
  
 		<h4>Projects</h4>
 		{{#if viewAlt}}
-		Min!<button class="btn btn-default likeBtn">Like</button>
+		{{#each projects}}
+			<div class="project" id="{{id}}">
+				<div class="thumbnail">
+					<a href="/project/{{id}}">
+						<img src="images/{{image}}" alt="Lorem Pixel image" class="img-responsive">
+						<h4>{{title}}</h4>
+					</a>
+					<div class="likeCtr"><button class="btn btn-default likeBtn">Min! Like</button></div>
+					<div class="details"></div>
+				</div>
+			</div>
+		{{/each}}
 		{{else}}
 		{{#each projects}}
 			<div class="project" id="{{id}}">
