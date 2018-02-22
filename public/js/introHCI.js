@@ -9,10 +9,12 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-	$('.btn btn-default likeBtn').click(recordEvent);// your code here
+	$('.likeBtn').click(recordEvent);// your code here
 }
 
 function recordEvent(event) {
+	event.preventDefault();
+	console.log("calling ga....")
 	ga('create','UA-114588990-1','auto');
 	ga("send", "event", "like", "click");
 }
